@@ -1,4 +1,3 @@
-import _ from 'lodash'; // eslint-disable-line
 import './style.css';
 
 const leaderboard = [
@@ -10,11 +9,16 @@ const leaderboard = [
   { name: 'Jamie', score: 72 },
 ];
 
-const container = document.querySelector('#leaderboard');
 
 leaderboard.forEach((element) => {
+  const container = document.querySelector('#leaderboard');
   const item = document.createElement('li');
   item.classList.add('row');
-  item.textContent = (`${element.name}`) + ': ' + (`${element.score}`); // eslint-disable-line
+  item.textContent = `${element.name}:  ${element.score}`;
   container.appendChild(item);
+
+  console.log(item);
 });
+
+
+console.log(leaderboard);
