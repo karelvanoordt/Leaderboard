@@ -4,7 +4,7 @@ An API-driven web app to display a simple scoreboard.
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
 
-![screenshot](./screenshots/screenshot.png)
+![screenshot](./Screenshot.png)
 
 
 ## Built With
