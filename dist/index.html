@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leaderboard App</title>
+<script defer src="main.js"></script></head>
+<body>
+    <header>
+      <h1>Leaderboard</h1>
+    </header>
+
+    <section id="main-container">
+      <div  id="left-column">
+        <div class="div-title scores">
+            <h3 class="column-title">Recent scores</h3>
+            <button class="btn refresh-btn">Refresh</button>
+        </div>
+
+        <ul id="leaderboard">
+
+        </ul>
+      </div>
+
+      <div id="right-column">
+        <div class="div-title add">
+          <h3 class="column-title">Add your score</h3>
+        </div>
+
+        <div id="input-container">
+          <input class="input-field name" type="text" placeholder="Your name" required>
+          <input class="input-field score" type="text" placeholder="Your score" required>
+          <button class="submit-btn btn">Submit</button>
+        </div>
+
+      </div>
+
+    </section>
+
+    <script src="bundle.js"></script>
+</body>
+</html>
