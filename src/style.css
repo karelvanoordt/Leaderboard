@@ -32,7 +32,17 @@ header {
 #left-column #leaderboard {
     border: 2px solid black;  
     margin-top: 30px;
+    list-style-type: none;
 }
+
+.row {
+    padding: 2px 0 2px 4px;
+}
+
+ul > li:nth-child(odd) {
+    background-color: rgb(217, 217, 217);
+}
+
 
 .refresh-btn {
     margin-left: 20px;

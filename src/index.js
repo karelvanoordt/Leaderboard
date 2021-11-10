@@ -12,10 +12,10 @@ const leaderboard = [
 
 const container = document.querySelector('#leaderboard');
 
-leaderboard.forEach((name, score) => {
+leaderboard.forEach((element) => {
     const item = document.createElement('li');
     item.classList.add('row');
-    item.innerHTML = `${name}: ${score}`;
+    item.textContent = (`${element.name}`) + ': ' + (`${element.score}`);
     container.appendChild(item);
 });
 
