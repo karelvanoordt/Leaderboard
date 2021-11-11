@@ -22,3 +22,7 @@ const updateLeaderboard = async () => {
 refreshBtn.addEventListener('click', async () => {
   await updateLeaderboard();
 });
+
+window.onload = () => {
+  updateLeaderboard()
+}
