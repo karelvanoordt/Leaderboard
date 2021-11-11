@@ -1,6 +1,6 @@
 import './style.css';
 import { getScore, postScore } from './gameapi';
-import currentLeaderboard from './leaderboard';
+import { currentLeaderboard } from './leaderboard';
 
 const refreshBtn = document.querySelector('.refresh-btn');
 const submitBtn = document.querySelector('.submit-btn');
@@ -16,18 +16,14 @@ submitBtn.addEventListener('click', async (e) => {
 });
 
 function updateLeaderboard () {
-    const fetchScore = getScore();
-    console.log(fetchScore.result);
-    const updateList = fetchScore.result;
-    currentLeaderboard(updateList);
-
+    getScore().then((scores) => {
+      currentLeaderboard(scores);
+    });
 };
 
 refreshBtn.addEventListener('click', async () => {
     await updateLeaderboard();
 });
 
-// window.onload() {
-//   updateLeaderboard()
-// };
+
 

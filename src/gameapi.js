@@ -3,13 +3,16 @@ const userInput = document.querySelector('.name');
 const scoreInput = document.querySelector('.score');
 
 const getScore = async () => {
-    const fetchScore = await fetch (gameScoreUrl, {
+    const fetchScore = await fetch(gameScoreUrl, {
         method: 'GET',
         headers: {
             'Content-type': 'application/json; charset=UTF-8',
         },
-    });
-    return fetchScore.json();
+    })
+    .then((res) => res.json())
+    .then((data) => data.result)
+    .catch(() => []);
+    return fetchScore;
 };
 
 const postScore = async () => {

@@ -1,10 +1,8 @@
 import './style.css';
 
-const result = [];
-
-export default function currentLeaderboard() {
+function currentLeaderboard(result) {
     const container = document.querySelector('#leaderboard');
-
+    container.innerHTML = '';
     result.forEach((element) => {
         const { user, score } = element;
         const item = document.createElement('li');
@@ -16,3 +14,4 @@ export default function currentLeaderboard() {
 
 };
 
+export { currentLeaderboard }
