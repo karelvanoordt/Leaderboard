@@ -24,5 +24,5 @@ refreshBtn.addEventListener('click', async () => {
 });
 
 window.onload = () => {
-  updateLeaderboard()
-}
+  updateLeaderboard();
+};
