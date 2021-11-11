@@ -1,5 +1,6 @@
 import './style.css';
 import { getScore, postScore } from './gameapi.js';
+import currentLeaderboard from './leaderboard.js';
 
 const refreshBtn = document.querySelector('.refresh-btn');
 const submitBtn = document.querySelector('.submit-btn');
@@ -13,11 +14,10 @@ submitBtn.addEventListener('click', async (e) => {
   await postScore(userInputF, scoreInputF);
 });
 
-function updateLeaderboard() {
-  getScore().then((scores) => {
-    currentLeaderboard(scores); // eslint-disable-line
-  });
-}
+const updateLeaderboard = async () => {
+  const scores = await getScore();
+  currentLeaderboard(scores);
+};
 
 refreshBtn.addEventListener('click', async () => {
   await updateLeaderboard();

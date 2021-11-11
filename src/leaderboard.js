@@ -1,6 +1,6 @@
 import './style.css';
 
-export default function currentLeaderboard(result) {
+const currentLeaderboard = (result) => {
   const container = document.querySelector('#leaderboard');
   container.innerHTML = '';
   result.forEach((element) => {
@@ -9,4 +9,6 @@ export default function currentLeaderboard(result) {
     item.innerHTML = `<p>${element.user}:  ${element.score}</p>`;
     container.appendChild(item);
   });
-}
+};
+
+export default currentLeaderboard;
