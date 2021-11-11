@@ -1,18 +1,33 @@
 import './style.css';
+import { getScore, postScore } from './gameapi';
+import currentLeaderboard from './leaderboard';
 
-const leaderboard = [
-  { name: 'Hannah', score: 98 },
-  { name: 'Kevin', score: 94 },
-  { name: 'Stuart', score: 81 },
-  { name: 'Matt', score: 87 },
-  { name: 'Alyssa', score: 90 },
-  { name: 'Jamie', score: 72 },
-];
+const refreshBtn = document.querySelector('.refresh-btn');
+const submitBtn = document.querySelector('.submit-btn');
+const mainContainer = document.querySelector('#leaderboard');
+const userInput = document.querySelector('.name');
+const scoreInput = document.querySelector('.score');
 
-leaderboard.forEach((element) => {
-  const container = document.querySelector('#leaderboard');
-  const item = document.createElement('li');
-  item.classList.add('row');
-  item.textContent = `${element.name}:  ${element.score}`;
-  container.appendChild(item);
+submitBtn.addEventListener('click', async (e) => {
+    e.preventDefault();
+    const userInputF = userInput.value;
+    const scoreInputF = scoreInput.value;
+    await postScore(userInputF, scoreInputF);
 });
+
+function updateLeaderboard () {
+    const fetchScore = getScore();
+    console.log(fetchScore.result);
+    const updateList = fetchScore.result;
+    currentLeaderboard(updateList);
+
+};
+
+refreshBtn.addEventListener('click', async () => {
+    await updateLeaderboard();
+});
+
+// window.onload() {
+//   updateLeaderboard()
+// };
+
