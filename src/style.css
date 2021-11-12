@@ -29,6 +29,7 @@ header {
 
 .column-title {
   color: white;
+  font-size: 24px;
 }
 
 #left-column {
@@ -77,10 +78,6 @@ p {
 #right-column {
   display: flex;
   flex-direction: column;
-}
-
-.column-title {
-  font-size: 24px;
 }
 
 #input-container {
